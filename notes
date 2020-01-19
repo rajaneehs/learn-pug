@@ -1,0 +1,89 @@
+pug - html preprocessor
+It's a language, where it will convert itself into native html code.
+Its clean & with powerful functionalities (JS)
+
+npm install pug-cli -g
+In terminal: pug
+
+/html - within this all hte native html will be saved
+
+To compile pug files:
+pug -w ./ -o ./html -P
+here, -w    : to watch file for any changes (watcher)
+./          : everything in the root directory
+-o          : output
+./html      : to which folder the o/p must be saved (here, html folder in the root)
+-P          : to prettify (code indentation etc.)
+
+In pug indentation is important.
+For every child element
+
+To generate multiline text using pug,
+Put a dot(.) infront of the tag & drop the text to the next line (with indentation) & type as required.
+
+IDs & classes:
+IDs, syntax is similar to CSS selector for ID (#)
+similar for class (.)
+
+NOTE: In pug, if only class or ID is specified without any elements with it, then it defaults to 'div'.
+
+
+Attributes:
+For an element, attributes are seperated by spaces within round brackets.
+Advanced features: use of JS inside attribute value
+
+NOTE: to write JS within pug code use dash (-)
+ex: - const myClass = [1,2,3,4]
+
+We can define attributes as JS Objects & arrays & put that on the actual element.
+
+Boolean attributes: (disabled, checked)
+
+
+Using CSS:
+External CSS: similar to regualr external HTML
+Internal CSS: again similar
+  multiline html element
+Inline CSS
+& also with JS Objects
+
+NOTE: for multiline html element, put a dot(.) infront of the element
+
+
+For Each Loop:
+- each loop allows us to loop over an array or an object & then output html.
+- each loop is same as the for loop, ONLY the name is different.
+- It also comes with an 'else'.
+
+
+Conditionals:
+NOTE: Pipe character(|) - to make o/p plain text & NOT html
+interpolation: #{}
+
+
+Case statement:
+'when' - keyword used
+syntax:-
+here, x = value against which comparison/ check is done.
+case x
+when 'value'
+  //- do something
+
+default
+  //- do this instead
+
+
+'Includes' in Pug:
+- to include other pug files, inside our pug file.
+And it is very useful when we have multiple HTML pages that share the same html
+Ex: headers, navbar, footer
+
+
+Mixins:
+Reusable blocks of pug code
+They behave like functions
+We can call Mixins thru' out pug project & even pass in data as args.
+So, Dynamic data (from DB), we can pass it in as args & mixin will render the html with those args.
+
+
+
